@@ -41,6 +41,7 @@ var require = {
   callback: function (Backbone, Marionette) {
     'use strict';
 
+    // Velocity is added to the jquery/$ scope
     window.Backbone = Backbone;
     window.Marionette = Marionette;
   },

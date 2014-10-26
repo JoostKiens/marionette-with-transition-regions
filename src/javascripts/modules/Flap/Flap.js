@@ -14,6 +14,8 @@ define(['App', './templates'], function (App, templates) {
       console.log('flap');
       this._vwWidth = this._getVwWidth();
       this.transitionInCss = this._getTransitionInCss();
+
+      // St vwWitdh again on resize event, throttle it or something
     },
 
 

@@ -31,8 +31,8 @@ define([
     });
 
     App.addInitializer(function () {
-      // These "live" throughout the entire application's lifecycle
-      // so no need to unbind events
+
+      // Repeat for nav & footer, if necessary
       App.regionMainNav.show(new MainNav());
     });
 
