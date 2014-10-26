@@ -1,0 +1,24 @@
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+## sublime project files to ignore
+# workspace files are user-specific
+*.sublime-workspace
+*.sublime-project
+
+## grunt specific files and directories to ignore
+node_modules/
+*.npm-debug.log
+*.tmp
+npm-debug.log
+
+## bower
+bower_components/
+
+## frontend specific
+/dist/
+/src/stylesheets/

@@ -1,0 +1,12 @@
+{
+  "name": "KLBRProto",
+  "version": "0.1.0",
+  "main": "index.html",
+  "dependencies": {
+    "marionette": "~2.2.2",
+    "requirejs": "~2.1.15",
+    "velocity": "~1.1.0",
+    "tpl": "Rhinofly/requirejs-tpl",
+    "normalize-less": "*"
+  }
+}

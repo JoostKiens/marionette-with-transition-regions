@@ -1,0 +1,8 @@
+{
+  "devDir": "src",
+  "distDir": "dist",
+  "jsDir": "javascripts",
+  "lessDir": "less",
+  "cssDir": "stylesheets",
+  "imgDir": "images"
+}
