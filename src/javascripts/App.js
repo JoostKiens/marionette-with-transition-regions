@@ -24,7 +24,7 @@ define([
     });
 
     App.addInitializer(function () {
-      App.router = new AppRouter();
+      App.router = new AppRouter({ 'region': App.regionMainContent });
       Backbone.history.start({ pushState: true });
       routeInternalLinks();
     });

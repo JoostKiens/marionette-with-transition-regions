@@ -1,9 +1,7 @@
 define([
-  './AppView',
   './modules/Home/Home',
   './modules/Flap/Flap'
 ], function (
-  AppView,
   Home,
   Flap
 ) {
@@ -16,18 +14,18 @@ define([
       'flap': 'flap'
     },
 
-    initialize: function (){
-      this.appView = new AppView(App.regionMainContent);
+    initialize: function (options) {
+      this.region = options.region;
     },
 
     home: function () {
       var homeView = new Home();
-      this.appView.showView(homeView);
+      this.region.show(homeView);
     },
 
     flap: function () {
       var flapView = new Flap();
-      this.appView.showView(flapView);
+      this.region.show(flapView);
     }
 
   });

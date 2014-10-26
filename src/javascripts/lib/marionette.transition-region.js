@@ -11,7 +11,41 @@
  * https://github.com/jmeas/marionette.transition-region/
  */
 
-//(function() {
+ /*
+  * Read discussion https://github.com/marionettejs/backbone.marionette/issues/320
+  * TODO:
+  * 1 Make sure events are all unbound when destroying a view (is this already happening?)
+  * 2 Allow a previous view to exist while the new view is appended and tranisitioned "over" or "next to"
+  *  the previous view
+  *  (something like: http://codepen.io/jpweeks/pen/GikzF?editors=001)
+  *  Is this handled by "concurrentTransition" below?
+  * 3 Handle exception transitions for a new view when no previous view exists (animateEmpty)
+  * 4 Handle exception transitions when a region is created? (animateFirst)
+  * 5 Decide of want to use callbacks or promises for when a transition is complete, and implement this
+  * 6 Refactor
+  *
+  * Possible way to remove a view from region (TODO 1):
+    closeView: function (view) {
+      view = view || this.currentView;
+      if (!view || view.isClosed) { return; }
+
+      // Destroy and makes sure all events, even those of behaviors are unbound
+      // it also invokes onBeforeDestroy and onDestroy
+      if (view.destroy) {
+        view.destroy();
+      } else if (view.remove) {
+        // Backbone's way, not sure if this ever is necessary
+        // Removes all eventlisteners from the view
+        view.remove();
+      }
+
+      // delete from queue
+      // Not sure yet how the queue manager works
+    }
+  */
+
+
+
 define(['marionette'], function (Marionette) {
   'use strict';
   Marionette.TransitionRegion = Marionette.Region.extend({
@@ -256,5 +290,3 @@ define(['marionette'], function (Marionette) {
     },
   });
 });
-
-//})();
