@@ -20,7 +20,8 @@ define([
     });
 
     App.regionMainContent = new Marionette.TransitionRegion({
-      el: '#js-region-main-content'
+      el: '#js-region-main-content',
+      concurrentTransition: true
     });
 
     App.addInitializer(function () {

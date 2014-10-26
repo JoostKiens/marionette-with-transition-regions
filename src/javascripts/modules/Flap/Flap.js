@@ -8,13 +8,20 @@ define(['App', './templates'], function (App, templates) {
 
     className: 'page page-flap',
 
+    _animationDuration: 1000,
+
     initialize: function () {
       console.log('flap');
+      this._vwWidth = this._getVwWidth();
+      this.transitionInCss = this._getTransitionInCss();
     },
 
-    transitionInCss: {
-      position: 'absolute',
-      left: 500,
+
+    _getTransitionInCss: function () {
+      return {
+        position: 'absolute',
+        left: this._vwWidth,
+      }
     },
 
    // Do some jQuery stuff, then, once you're done, trigger 'animateIn' to let the region
@@ -22,7 +29,7 @@ define(['App', './templates'], function (App, templates) {
     animateIn: function() {
       this.$el.velocity(
         { left: 0 },
-        1000,
+        this._animationDuration, this,
         _.bind(this.trigger, this, 'animateIn')
       );
     },
@@ -30,10 +37,14 @@ define(['App', './templates'], function (App, templates) {
     // Same as above, except this time we trigger 'animateOut'
     animateOut: function() {
       this.$el.velocity(
-        { left: -500 },
-        1000,
+        { left: -this._vwWidth },
+        this._animationDuration,
         _.bind(this.trigger, this, 'animateOut')
       );
+    },
+
+    _getVwWidth: function () {
+      return $( window ).width();
     }
   });
 });

@@ -26,7 +26,7 @@ define(['App', './templates'], function (App, templates) {
     // Same as above, except this time we trigger 'animateOut'
     animateOut: function() {
       this.$el.animate(
-        { opacity: 0 },
+        { opacity: 1 },
         1000,
         _.bind(this.trigger, this, 'animateOut')
       );

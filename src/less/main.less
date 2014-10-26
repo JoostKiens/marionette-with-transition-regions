@@ -1,2 +1,43 @@
 @import '../../bower_components/normalize-less/normalize';
 @import 'lib/grid';
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.main-content-container {
+  display: table;
+}
+
+.main-content {
+  position: relative;
+  display: table-row;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  display: table-cell;
+}
+
+.page-home {
+  background-color: hotpink;
+}
+
+.page-flap {
+  background-color: teal;
+}
